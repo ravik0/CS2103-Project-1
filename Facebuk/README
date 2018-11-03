@@ -1,0 +1,40 @@
+These are my justifications for the classes I created
+
+Entity:
+This class was built as Pets and Persons require a lot of shared code and work in a lot of the same ways.
+For example, both Pet & Person share friend functions, happiness computation functions, and cliques. 
+They are similar enough to warrant both having a superclass.
+This allows code to be reused heavily between the two, while keeping the classes themselves small.
+Entity is abstract as it will only be extended off of, its constructor will never be called.
+
+FacebukObject:
+This was created as I realized that Person/Pet/Moment/Possession all share a name, an image, and the equals function. 
+That meant that I could just put all of that in one superclass and use that code across everything.
+Otherwise, I would have had to have a name, image, and an equals inside of every single class.
+It is an abstract class as one will never want to create a FacebukObject class as is merely a base for other classes.
+
+FriendRequest:
+It's a required class
+
+Pet/Possession:
+Just a side note - There is a little reused code between the two - they both have separate declarations of owner and setOwner.
+This is because, while they both share this trait, they share no other traits, therefore there was no reason to create a superclass for them.
+Pet already inherited a class anyway, and could only get an interface, which was useless for this assignment.
+
+FacebukPartialTester:
+While this is optional to submit, I did change around some of the provided test cases. I did not change their functionality, but I
+moved them over into consolidated functions (i.e testAddFr) such that I could re-use code across the multiple tests. I did
+put the original FacebukPartialTester into my folder briefly to make sure that my code passed every test case, and it did.
+
+Explanations of my function design can be found as comments in the classes.
+Some of the functions in Entity are spaced out a bit more than usual to make it look more visually appealing due to the
+volume of comments in it.
+
+Notation:
+My notation is based on how I learned in APCS. For private variables, I use underscores. For protected, I don't use underscores. 
+Any class I extend off of, I have the variable be protected. For non-extended classes I keep them private.
+Most methods are public, though some helpers in Entity are private.
+Classes, functions, and variables are normally named.
+
+Ravi Kirschner
+rskirschner@wpi.edu
